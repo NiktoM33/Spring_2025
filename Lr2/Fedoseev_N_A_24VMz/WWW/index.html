@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casebattle</title>
+
+    <!-- Подключение внешнего CSS файла -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+    <h1>Добро пожаловать!</h1>
+</header>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="about.html">О сайте</a>
+    <a href="contact.html">Контакты</a>
+    <button id="profile-btn">
+        <img src="profile.svg" alt="profile" width="24" height="24" fill="white" viewBox="0 0 24 24">
+        </svg>
+    </button>
+</nav>
+
+<!-- Модальное окно для регистрации -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Регистрация</h2>
+        <form class="auth-form">
+            <input type="text" id="name" placeholder="Имя" required>
+            <input type="email" id="email" placeholder="Электронная почта" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <input type="password" id="confirm-password" placeholder="Подтверждение пароля" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Получаем элементы
+    var modal = document.getElementById("authModal");
+    var btn = document.getElementById("profile-btn");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Открытие модального окна при нажатии на кнопку профиля
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Закрытие модального окна при нажатии на крестик
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Закрытие модального окна при клике вне его области
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<section id="car-brands">
+    <h2>Популярные автомобильные марки</h2>
+    <div class="brands-container">
+
+        <div class="brand">
+            <h3>BMW</h3>
+            <p>Немецкий производитель, основан в 1916 году. Известен своими спортивными и премиальными автомобилями.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=e4b0e6c71085e6ca9c43ed6a4bebb2eb81901b91-10136989-images-thumbs&n=13" alt="BMW M3" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Mercedes-Benz</h3>
+            <p>Один из старейших автопроизводителей, основан в 1926 году. Символ роскоши и технологичности.</p>
+            <img src="https://www.mrpinglife.com/wp-content/uploads/2017/09/Exterior.jpg" alt="Mercedes S-Class" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Audi</h3>
+            <p>Немецкая марка, вошедшая в состав концерна Volkswagen. Знаменита своим дизайном и Quattro.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=09e15995be0b318fa3063ec7efe3602bbadd15bc-5163093-images-thumbs&n=13" alt="Audi A6" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Toyota</h3>
+            <p>Крупнейший автопроизводитель в мире. Основана в 1937 году в Японии. Лидер в гибридных технологиях.</p>
+            <img src="https://tflstudios.wpenginepowered.com/wp-content/uploads/2017/06/2018-toyota-camry-se-hybrid-1024x680.jpg" alt="Toyota Camry" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Honda</h3>
+            <p>Японская компания, основанная в 1948 году. Известна надежными машинами и мотоциклами.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=4baa3b0c3c05c6ccde6401ba620fb1d1fc57c960-2447388-images-thumbs&n=13" alt="Honda Civic" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Ford</h3>
+            <p>Американский автогигант, основан Генри Фордом в 1903 году. Первый массовый производитель автомобилей.</p>
+            <img src="https://www.carscoops.com/wp-content/uploads/2019/04/7b78edbb-ford-mustang-new-york-auto-show--1024x555.jpg" alt="Ford Mustang" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Chevrolet</h3>
+            <p>Американская марка, основана в 1911 году. Продукт концерна General Motors, ориентирован на массовый рынок.</p>
+            <img src="https://www.hdcarwallpapers.com/thumbs/2018/chevrolet_camaro_ss_2018_4k-t1.jpg" alt="Chevrolet Camaro" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Porsche</h3>
+            <p>Немецкий производитель спортивных авто, основан в 1931 году. Символ скорости и инженерного искусства.</p>
+            <img src="https://www.hdcarwallpapers.com/thumbs/2018/porsche_911_carrera_4s_2019_4k_11-t2.jpg" alt="Porsche 911" width="300">
+        </div>
+
+        <div class="brand">
+            <h3>Lamborghini</h3>
+            <p>Итальянская марка суперкаров, основана в 1963 году. Отличается агрессивным дизайном и мощностью.</p>
+            <img src="https://images.hdqwalls.com/wallpapers/bthumb/2020-lamborghini-aventador-svj-roadster-dy.jpg" alt="Lamborghini Aventador" width="300">
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    <p>&copy; 2025 Мой сайт. Все права защищены.</p>
+</footer>
+
+<!-- Подключаем JavaScript файл -->
+<script src="script.js"></script>
+
+</body>
+</html>

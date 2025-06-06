@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О сайте</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Добро пожаловать!</h1>
+</header>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="about.html">О сайте</a>
+    <a href="contact.html">Контакты</a>
+    <button id="profile-btn">
+        <img src="profile.svg" alt="profile" width="24" height="24" fill="white" viewBox="0 0 24 24">
+        </svg>
+    </button>
+</nav>
+
+<!-- Модальное окно для регистрации -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Регистрация</h2>
+        <form class="auth-form">
+            <input type="text" id="name" placeholder="Имя" required>
+            <input type="email" id="email" placeholder="Электронная почта" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <input type="password" id="confirm-password" placeholder="Подтверждение пароля" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Получаем элементы
+    var modal = document.getElementById("authModal");
+    var btn = document.getElementById("profile-btn");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Открытие модального окна при нажатии на кнопку профиля
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Закрытие модального окна при нажатии на крестик
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Закрытие модального окна при клике вне его области
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<section>
+    <h2>Информация о сайте</h2>
+    <p>Этот сайт был создан для демонстрации базовых навыков в HTML, CSS и JavaScript. Он простой, но его можно развивать и улучшать.</p>
+    <!-- Добавляем кнопку для вызова JavaScript функции -->
+    <button onclick="showMessage()">Нажми меня!</button>
+</section>
+
+<footer>
+    <p>&copy; 2025 Мой сайт. Все права защищены.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
